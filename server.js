@@ -19,10 +19,10 @@ function configureFeed(feedTitle, itemTitleBase) {
 
   for (var i = 0; i < 10; i++) {
     feed.item({
-        title:  (itemTitleBase || 'Item title #') + i,
-        description: 'Use this for the content. It can include html.',
-        url: 'https://infinite-rss.glitch.me/article/' + i, // link to the item 
-        date: (new Date()) // any format that js Date can parse.
+        title:  (itemTitleBase || 'Article #') + i,
+        description: 'Article description!',
+        url: 'https://infinite-rss.glitch.me/article/' + i,
+        date: (new Date())
     });
   }
   
