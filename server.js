@@ -7,8 +7,8 @@ function configureFeed(feedTitle, itemTitleBase) {
       title: feedTitle || 'Feed Title',
       description: 'Feed Description',
       feed_url: 'https://infinite-rss.glitch.me/',
-      site_url: 'https://infinite-rss.glitch.me/',
-      image_url: 'http://example.com/icon.png',
+      site_url: 'https://github.com/autonome/infinite-rss',
+      image_url: 'https://cdn.glitch.com/0aa3ee32-12ac-4d7c-878b-5c7f22e228d1%2Ffeed-icon.svg?1507032662337',
       managingEditor: 'Dietrich Ayala',
       webMaster: 'Dietrich Ayala',
       language: 'en',
@@ -19,10 +19,10 @@ function configureFeed(feedTitle, itemTitleBase) {
 
   for (var i = 0; i < 10; i++) {
     feed.item({
-        title:  (itemTitleBase || 'Item title #') + i,
-        description: 'Use this for the content. It can include html.',
-        url: 'https://infinite-rss.glitch.me/article/' + i, // link to the item 
-        date: (new Date()) // any format that js Date can parse.
+        title:  (itemTitleBase || 'Article #') + i,
+        description: 'Article description!',
+        url: 'https://infinite-rss.glitch.me/article/' + i,
+        date: (new Date())
     });
   }
   
