@@ -5,7 +5,7 @@ var app = express();
 function configureFeed(feedTitle, itemTitleBase) {
   var feed = new RSS({
       title: feedTitle || 'Feed Title',
-      description: 'Feed Description',
+      description: 'URL-configurable RSS feed generator for testing feed-eating bots. Source code at https://github.com/autonome/infinite-rss',
       feed_url: 'https://infinite-rss.glitch.me/',
       site_url: 'https://github.com/autonome/infinite-rss',
       image_url: 'https://cdn.glitch.com/0aa3ee32-12ac-4d7c-878b-5c7f22e228d1%2Ffeed-icon.svg?1507032662337',
