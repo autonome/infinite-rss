@@ -1,9 +1,9 @@
-var RSS = require('rss');
-var express = require('express');
-var app = express();
+const RSS = require('rss');
+const express = require('express');
+const app = express();
 
-function configureFeed(feedTitle, itemTitleBase) {
-  var feed = new RSS({
+function configureFeed(feedTitle, itemTitleBase, itemCount) {
+  let feed = new RSS({
       title: feedTitle || 'Feed Title',
       description: 'URL-configurable RSS feed generator for testing feed-eating bots. Source code at https://github.com/autonome/infinite-rss',
       feed_url: 'https://infinite-rss.glitch.me/',
@@ -17,7 +17,7 @@ function configureFeed(feedTitle, itemTitleBase) {
       ttl: '60'
   });
 
-  for (var i = 0; i < 10; i++) {
+  for (let i = 0; i < (itemCount|| 10); i++) {
     feed.item({
         title:  (itemTitleBase || 'Article #') + i,
         description: 'Article description!',
@@ -31,7 +31,7 @@ function configureFeed(feedTitle, itemTitleBase) {
 
 app.get("/", function (request, response) {
   response.set('Content-Type', 'application/rss+xml');
-  var feed = configureFeed(request.query.feedTitle, request.query.itemTitleBase)
+  var feed = configureFeed(request.query.feedTitle, request.query.itemTitleBase, request.query.itemCount)
   var xml = feed.xml();
   response.send(xml);
 });
